@@ -37,5 +37,6 @@ kompose convert -f compose.yml
 5. helm
 
 ```bash
-
+make helm-install
+make helm-uninstall
 ```
