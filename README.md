@@ -51,6 +51,7 @@ make kind-create
 make k8s-apply
 
 kubectl port-forward svc/intro-container 8000:8000
+kubectl port-forward svc/intro-container 8080:8080
 
 make k8s-delete
 make kind-delete
@@ -68,6 +69,7 @@ helm uninstall sre
 make helm-install
 
 kubectl port-forward svc/fastapi-sre 8000:8000
+kubectl port-forward svc/fastapi-sre 8080:8080
 
 make helm-uninstall
 ```
