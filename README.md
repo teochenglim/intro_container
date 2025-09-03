@@ -40,10 +40,13 @@ make compose-down
 4. kubernetes (k8s)
 
 ```bash
+### install kind and kompose helper
 brew install kompose kind
 
+### convert docker compose to k8s
 kompose convert -f compose.yml
 
+### using make
 make kind-create
 make k8s-apply
 
@@ -63,5 +66,8 @@ helm uninstall sre
 
 ### using make
 make helm-install
+
+kubectl port-forward svc/fastapi-sre 8000:8000
+
 make helm-uninstall
 ```
