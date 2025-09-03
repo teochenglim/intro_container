@@ -3,7 +3,7 @@ DOCKER_IMAGE=teochenglim/$(APP_NAME):latest
 
 # Local run
 run:
-	uv run python main.py
+	uv run python src/main.py
 
 # Docker
 docker-build:
