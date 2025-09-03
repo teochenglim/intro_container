@@ -6,6 +6,7 @@ uv sync
 
 uv run python src/main.py
 
+### using make
 make run
 ```
 
@@ -20,6 +21,7 @@ docker run -it teochenglim/intro_container bash
 docker run -it teochenglim/intro_container
 docker run -it -p 8000:8000 teochenglim/intro_container
 
+### using make
 make docker-build
 make docker-run
 ```
@@ -30,6 +32,7 @@ make docker-run
 docker-compose up
 docker compose up
 
+### using make
 make compose-up
 make compose-down
 ```
@@ -54,7 +57,11 @@ make kind-delete
 5. helm
 
 ```bash
+### if you want to do it manually
+helm upgrade --install sre ./helm/
+helm uninstall sre
 
+### using make
 make helm-install
 make helm-uninstall
 ```
