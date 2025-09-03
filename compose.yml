@@ -6,6 +6,7 @@ services:
     image: teochenglim/intro_container:latest
     ports:
       - "8000:8000"
+      - "8080:8080"
     environment:
       - UVICORN_HOST=0.0.0.0
       - UVICORN_PORT=8000

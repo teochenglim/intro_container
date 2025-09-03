@@ -4,4 +4,5 @@ image:
   tag: latest
 service:
   type: ClusterIP
-  port: 9000
+  port: 8000
+  metricsPort: 8080
