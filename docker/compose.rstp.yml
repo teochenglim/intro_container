@@ -1,0 +1,29 @@
+version: "3.8"
+
+services:
+  mediamtx:
+    image: bluenviron/mediamtx:latest-ffmpeg-rpi
+    container_name: mediamtx
+    restart: unless-stopped
+    environment:
+      - RTSP_PORT=8554
+      - MTX_PATH=stream
+    ports:
+      - "8554:8554"     # RTSP
+      - "1935:1935"     # RTMP
+      - "8888:8888"     # HLS/HTTP API/Web UI
+      - "8889:8889"     # WebRTC WHIP/WHEP (HTTP)
+      - "8189:8189/udp" # WebRTC ICE/UDP
+      - "8890:8890/udp" # SRT (optional)
+    volumes:
+      - ./rstp_in/mediamtx.yml:/mediamtx.yml
+      - ./rstp_in:/rstp_in
+      - ./rstp_out:/rstp_out
+    # command: ["/mediamtx", "mediamtx.yml"]
+
+
+# docker run --rm 
+# -it -e RTSP_PORT=8554 -e MTX_PATH=stream 
+# -p 8554:8554 
+# -v ./rstp_in:/rstp_in -v "$PWD/rstp_in/mediamtx.yml:/mediamtx.yml:ro" 
+# bluenviron/mediamtx:latest-ffmpeg-rpi

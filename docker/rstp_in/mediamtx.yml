@@ -1,0 +1,12 @@
+paths: 
+  stream:
+    runOnInit: >
+      ffmpeg
+      -nostats
+      -re
+      -stream_loop -1
+      -i /rstp_in/sample_640x360.mp4
+      -c copy
+      -f rtsp
+      rtsp://0.0.0.0:8554/stream
+    runOnInitRestart: yes
